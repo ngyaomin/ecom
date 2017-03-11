@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+
   # GET /orders
   # GET /orders.json
   def index
@@ -24,7 +25,17 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+  	@order = Order.new(product_id: params[:product_id])
+  	@product = Product.find(params[:product_id])
+  	stripe_token = params[:stripeToken]
+  	payment_type = params[:stripeTokenType]
+  	customer_email = params[:stripeEmail]
+  	Stripe.api_key = 'secret key'
+  	Stripe::Charge.create(
+  		amount: @product.price*100,
+  		source: stripe_token
+  		currency: 'sgd'
+  	)
 
     respond_to do |format|
       if @order.save
