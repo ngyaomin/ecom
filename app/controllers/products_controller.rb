@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    # authorize! :update, @product
+     authorize! :update, @product
   end
 
   # POST /products
