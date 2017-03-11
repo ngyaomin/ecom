@@ -4,7 +4,21 @@
 
 <h1>Products</h1>
 
-<table>
+<div class="col-md-2">
+  <div class="productbox">
+    <% @products.each do |product| %>
+    <img src="http://lorempixel.com/400/200/" class="img-responsive">
+    <div class="producttitle"><%= product.name %></div>
+    <p class="text-justify"><%= product.price %></p>
+    <p class="text-justify"><%= product.description %></p>
+    <p class="text-justify"><%= product.inventory_available %></p>
+    <p class="text-justify"><%= product.purchase_quantity %></p>
+
+  </div>
+</div>
+  <% end %>
+
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -19,7 +33,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.product_image.thumb.url %></td>
+        <td><%= image_tag product.product_image.thumb.url %></td>
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.description %></td>
@@ -31,7 +45,7 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 

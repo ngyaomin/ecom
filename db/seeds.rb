@@ -12,5 +12,6 @@ require 'ffaker'
   description: FFaker::HipsterIpsum.paragraphs.join("\r\n",),
   price: rand(10.0...1000.0).round(2),
   inventory_available: rand(1...100),
-  purchase_quantity: rand(1...100))
+  purchase_quantity: rand(1...100),
+  )
  end
