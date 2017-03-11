@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
      @product = current_user.products.build(product_params)
-    #  authorize! :create, @product
+      authorize! :create, @product
 
     respond_to do |format|
       if @product.save
