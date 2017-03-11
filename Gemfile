@@ -17,6 +17,7 @@ gem "mini_magick"
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'rails_admin'
+gem 'cancan'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
