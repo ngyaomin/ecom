@@ -12,6 +12,7 @@ gem 'stripe-rails'
 gem 'ffaker'
 gem 'pg'
 gem 'kaminari'
+gem 'carrierwave'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
