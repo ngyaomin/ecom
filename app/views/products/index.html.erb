@@ -1,52 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <%= paginate @products %>
+<p><%= link_to 'New Product', new_product_path %> </p>
 
 <h1>Products</h1>
 
+
+<% @products.each do |product| %>
 <div class="col-md-2">
+
   <div class="productbox">
-    <% @products.each do |product| %>
-    <img src="http://lorempixel.com/400/200/" class="img-responsive">
-    <div class="producttitle"><%= product.name %></div>
-    <p class="text-justify"><%= product.price %></p>
-    <p class="text-justify"><%= product.description %></p>
-    <p class="text-justify"><%= product.inventory_available %></p>
-    <p class="text-justify"><%= product.purchase_quantity %></p>
-
+    <%= image_tag product.product_image.thumb.url %>
+    <div class="producttitle"><strong>Product Name: </strong> <br><%= product.name %></div>
+    <p class="text-justify"><strong>Product price: </strong><%= product.price %></p>
+    <p class="text-justify"><strong>Product description: </strong> <br> <%= product.description %></p>
+    <p class="text-justify"><strong>Stock left: </strong> <%= product.inventory_available %></p>
+    <p class="text-justify"><strong>We have sold: </strong> <%= product.purchase_quantity %></p>
+    <%= link_to 'Show', product %>
+    <%= link_to 'Edit', edit_product_path(product) %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
+
 </div>
-  <% end %>
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Inventory available</th>
-      <th>Purchase quantity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag product.product_image.thumb.url %></td>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-        <td><%= product.description %></td>
-        <td><%= product.inventory_available %></td>
-        <td><%= product.purchase_quantity %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
+<% end %>
 
 <br>
-
-<%= link_to 'New Product', new_product_path %>
