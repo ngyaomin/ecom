@@ -23,7 +23,7 @@
 
 
     <p class="text-justify"><strong>We have sold: </strong> <%= product.purchase_quantity %></p>
-    <%= link_to 'Show', product %>
+    <%= link_to 'Buy me la', product %>
     <% if can? :update, @product %>
       <%= link_to 'Edit', edit_product_path(product) %>
     <% end %>

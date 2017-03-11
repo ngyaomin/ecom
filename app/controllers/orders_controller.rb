@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
   	Stripe.api_key = 'sk_test_gAIpIbTKoOe3VuupER3KZkRG'
   	Stripe::Charge.create(
   		amount: @product.price*100,
-  		source: stripe_token
+  		source: stripe_token,
   		currency: 'sgd'
   	)
 
