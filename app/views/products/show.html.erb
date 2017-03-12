@@ -33,7 +33,7 @@
 <script
 		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		data-key="pk_test_GG8RyPUQj7hZmPKAFJwAgIDi"
-		data-amount=<%= number_to_currency @product.price %>
+		data-amount=<%= @product.price*100 %>
 		data-name="Yao Min Store"
 		data-description="buy <%= @product.name %>"
 		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
