@@ -25,17 +25,18 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-  	@order = Order.new(product_id: params[:product_id])
-  	@product = Product.find(params[:product_id])
-  	stripe_token = params[:stripeToken]
-  	payment_type = params[:stripeTokenType]
-  	customer_email = params[:stripeEmail]
-  	Stripe.api_key = 'sk_test_gAIpIbTKoOe3VuupER3KZkRG'
-  	Stripe::Charge.create(
-  		amount: @product.price*100,
-  		source: stripe_token,
-  		currency: 'sgd'
-  	)
+    @order = Order.new(product_id: params[:product_id])
+    @product = Product.find(params[:product_id])
+    stripe_token = params[:stripeToken]
+    payment_type = params[:stripeTokenType]
+    customer_email = params[:stripeEmail]
+    Stripe.api_key = "sk_test_gAIpIbTKoOe3VuupER3KZkRG"
+    Stripe::Charge.create(
+    amount: @product.price*100,
+    currency: "sgd",
+    source: stripe_token
+    )
+
 
     respond_to do |format|
       if @order.save

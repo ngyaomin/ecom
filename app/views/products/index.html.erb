@@ -1,38 +1,11 @@
-<p id="notice"><%= notice %></p>
 
 <%= paginate @products %>
 <p><%= link_to 'New Product', new_product_path %> </p>
 
 <h1>Products</h1>
 
-
 <% @products.each do |product| %>
-<div class="col-md-2">
-
-  <div class="productbox">
-    <%= image_tag product.product_image.thumb.url %>
-    <div class="producttitle"><strong>Product Name: </strong> <br><%= product.name %></div>
-    <p class="text-justify"><strong>Product price: </strong><%= product.price %></p>
-    <p class="text-justify"><strong>Product description: </strong> <br> <%= product.description %></p>
-
-    <p class="text-justify"><strong>Stock left: </strong>
-
-      <%= product.inventory_available %>
-
-    </p>
-
-
-    <p class="text-justify"><strong>We have sold: </strong> <%= product.purchase_quantity %></p>
-    <%= link_to 'Buy me la', product %>
-    <% if can? :update, @product %>
-      <%= link_to 'Edit', edit_product_path(product) %>
-    <% end %>
-    <% if can? :destroy, @product %>
-      <%= link_to 'Destroy', product_path(product),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>
-
-</div>
+  <%= render :partial => "productdisplay" , locals: {product: product}%>
 <% end %>
+
+<%= paginate @products %>

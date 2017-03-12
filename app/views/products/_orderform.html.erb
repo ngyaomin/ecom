@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @product.product_image.url %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency @product.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Inventory available:</strong>
+  <%= @product.inventory_available %>
+</p>
+
+<p>
+  <strong>Purchase quantity:</strong>
+  <%= @product.purchase_quantity %>
+</p>
+
+<%= form_for [@product, Order.new], method: :post do %>
+<script
+		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		data-key="pk_test_GG8RyPUQj7hZmPKAFJwAgIDi"
+		data-amount=<%= @product.price*100 %>
+		data-name="Yao Min Store"
+		data-description="buy <%= @product.name %>"
+		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+		data-locale="auto">
+</script>
+
+<%end%>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
