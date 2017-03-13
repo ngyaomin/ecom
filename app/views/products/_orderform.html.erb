@@ -11,7 +11,12 @@
 
 <p>
   <strong>Price:</strong>
-  <%= number_to_currency @product.price %>
+  <% if user_signed_in? %>
+    <% @product.price = @product.price*0.85 %>
+      <%=number_to_currency @product.price %>
+    <% else %>
+      <%=number_to_currency @product.price %>
+    <% end %>
 </p>
 
 <p>
@@ -37,7 +42,8 @@
 		data-name="Yao Min Store"
 		data-description="buy <%= @product.name %>"
 		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-		data-locale="auto">
+		data-locale="auto"
+    >
 </script>
 
 <%end%>

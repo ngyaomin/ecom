@@ -4,7 +4,15 @@
   <div class="productbox">
     <%= image_tag product.product_image.thumb.url %>
     <div class="producttitle"><strong>Product Name: </strong> <br><%= product.name %></div>
-    <p class="text-justify"><strong>Product price: </strong><%=number_to_currency product.price %></p>
+
+    <p class="text-justify"><strong>Product price: </strong>
+    <% if user_signed_in? %>
+      <%=number_to_currency product.price*0.85 %>
+      <% else %>
+      <%=number_to_currency product.price %>
+      <% end %>
+    </p>
+
     <p class="text-justify"><strong>Product description: </strong> <br> <%= product.description %></p>
 
     <p class="text-justify"><strong>Stock left: </strong>
