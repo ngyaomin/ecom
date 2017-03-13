@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,6 +20,8 @@
     <% end %>
 </p>
 
+
+
 <p>
   <strong>Description:</strong>
   <%= @product.description %>
@@ -34,6 +37,11 @@
   <%= @product.purchase_quantity %>
 </p>
 
+<p>
+  <strong>total_price:</strong>
+  <%= @product.price*@product.purchase_quantity %>
+</p>
+
 <%= form_for [@product, Order.new], method: :post do %>
 <script
 		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -44,9 +52,11 @@
 		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
 		data-locale="auto"
     >
+
 </script>
 
 <%end%>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

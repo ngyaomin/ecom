@@ -13,6 +13,10 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def total_price
+    @product.price*@product.purchase_quantity
+  end
+
   # GET /products/new
   def new
     @product = current_user.products.build
