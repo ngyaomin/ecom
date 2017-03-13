@@ -32,21 +32,14 @@ class OrdersController < ApplicationController
     customer_email = params[:stripeEmail]
     Stripe.api_key = "sk_test_gAIpIbTKoOe3VuupER3KZkRG"
     Stripe::Charge.create(
-    amount: @product.price*100,
+    amount: (@product.price*100).to_i,
     currency: "sgd",
     source: stripe_token
     )
 
+    @order.save!
+    redirect_to product_path(@product)
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /orders/1
