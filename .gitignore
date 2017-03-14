@@ -27,3 +27,5 @@ config/initializers/devise\.rb
 coverage/index\.html
 
 coverage/\.resultset\.json
+
+coverage/
