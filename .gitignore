@@ -23,3 +23,7 @@
 config/secrets\.yml
 
 config/initializers/devise\.rb
+
+coverage/index\.html
+
+coverage/\.resultset\.json

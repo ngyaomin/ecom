@@ -173,6 +173,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    shoulda-context (1.2.2)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     simplecov (0.13.0)
@@ -240,6 +241,7 @@ DEPENDENCIES
   rails (~> 5.0.2)
   rails_admin
   sass-rails (~> 5.0)
+  shoulda-context
   shoulda-matchers
   simplecov
   spring
