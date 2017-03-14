@@ -656,7 +656,6 @@
         1,
         1,
         null,
-        null,
         null
       ],
       "/Users/yaomin/Workspace/ecom/ecom/test/models/user_test.rb": [
@@ -683,6 +682,12 @@
         null
       ],
       "/Users/yaomin/Workspace/ecom/ecom/app/models/product.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -746,6 +751,6 @@
         null
       ]
     },
-    "timestamp": 1489461021
+    "timestamp": 1489461344
   }
 }

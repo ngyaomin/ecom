@@ -13,6 +13,5 @@ class ProductTest < ActiveSupport::TestCase
     should validate_presence_of(:description)
     should validate_presence_of(:inventory_available)
     should validate_presence_of(:purchase_quantity)
-  
   end
 end
