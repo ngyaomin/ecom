@@ -1,0 +1,8 @@
+<h2>Thanks, you paid <strong>
+  <% if user_signed_in? %>
+    <% @product.price = @product.price*0.85 %>
+      <%=number_to_currency @product.price %>
+    <% else %>
+      <%=number_to_currency @product.price %>
+    <% end %>
+</strong>!</h2>

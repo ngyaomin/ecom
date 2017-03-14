@@ -40,6 +40,9 @@ class OrdersController < ApplicationController
     @order.save!
     redirect_to product_path(@product)
 
+
+    
+
   end
 
   # PATCH/PUT /orders/1
