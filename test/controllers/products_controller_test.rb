@@ -5,6 +5,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     @product = products(:one)
   end
 
+
   test "should get index" do
     get products_url
     assert_response :success
@@ -25,7 +26,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show product" do
     get product_url(@product)
+
     assert_response :success
+    should render_template('show')
   end
 
   test "should get edit" do

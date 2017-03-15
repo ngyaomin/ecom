@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-14T11:15:44+08:00">2017-03-14T11:15:44+08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-15T10:29:23+08:00">2017-03-15T10:29:23+08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">76.79%</span></span>
+    (<span class="covered_percent"><span class="red">76.33%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.79
+         0.78
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>26</b> files in total.
-    <b>168</b> relevant lines. 
+    <b>169</b> relevant lines. 
     <span class="green"><b>129</b> lines covered</span> and
-    <span class="red"><b>39</b> lines missed </span>
+    <span class="red"><b>40</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -272,11 +272,11 @@
       
       <tr>
         <td class="strong"><a href="#24f4fb8173927a869d65f467ab49fdf6f611362d" class="src_link" title="test/controllers/products_controller_test.rb">test/controllers/products_controller_test.rb</a></td>
-        <td class="red strong">37.04 %</td>
-        <td>48</td>
-        <td>27</td>
+        <td class="red strong">35.71 %</td>
+        <td>51</td>
+        <td>28</td>
         <td>10</td>
-        <td>17</td>
+        <td>18</td>
         <td>0.4</td>
       </tr>
       
@@ -4385,11 +4385,11 @@
         <div class="source_table" id="24f4fb8173927a869d65f467ab49fdf6f611362d">
   <div class="header">
     <h3>test/controllers/products_controller_test.rb</h3>
-    <h4><span class="red">37.04 %</span> covered</h4>
+    <h4><span class="red">35.71 %</span> covered</h4>
     <div>
-      <b>27</b> relevant lines. 
+      <b>28</b> relevant lines. 
       <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
+      <span class="red"><b>18</b> lines missed.</span>
     </div>
   </div>
   
@@ -4438,247 +4438,265 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  test &quot;should get index&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
           <code class="ruby">    get products_url</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="11">
           
           
           <code class="ruby">    assert_response :success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">  test &quot;should get new&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="15">
           
           
           <code class="ruby">    get new_product_url</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="missed" data-hits="0" data-linenumber="16">
           
           
           <code class="ruby">    assert_response :success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">  test &quot;should create product&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="missed" data-hits="0" data-linenumber="20">
           
           
           <code class="ruby">    assert_difference(&#39;Product.count&#39;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
           <code class="ruby">      post products_url, params: { product: { description: @product.description, inventory_available: @product.inventory_available, name: @product.name, price: @product.price, purchase_quantity: @product.purchase_quantity } }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="24">
           
           
           <code class="ruby">    assert_redirected_to product_url(Product.last)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  test &quot;should show product&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">    get product_url(@product)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
-          
-          
-          <code class="ruby">    assert_response :success</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="30">
+          
+          
+          <code class="ruby">    assert_response :success</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="31">
+          
+          
+          <code class="ruby">    should render_template(&#39;show&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">  test &quot;should get edit&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
           <code class="ruby">    get edit_product_url(@product)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">    assert_response :success</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">  test &quot;should update product&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
+        <li class="missed" data-hits="0" data-linenumber="40">
           
           
           <code class="ruby">    patch product_url(@product), params: { product: { description: @product.description, inventory_available: @product.inventory_available, name: @product.name, price: @product.price, purchase_quantity: @product.purchase_quantity } }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
           <code class="ruby">    assert_redirected_to product_url(@product)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">  test &quot;should destroy product&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
+        <li class="missed" data-hits="0" data-linenumber="45">
           
           
           <code class="ruby">    assert_difference(&#39;Product.count&#39;, -1) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
           <code class="ruby">      delete product_url(@product)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="49">
           
           
           <code class="ruby">    assert_redirected_to products_url</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">end</code>
