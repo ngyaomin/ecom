@@ -1,0 +1,13 @@
+input.btn.btn-danger.btn-block[
+  type="submit"
+  value="Buy Now!!!!!"
+  data-key="pk_test_GG8RyPUQj7hZmPKAFJwAgIDi"
+  data-amount=""
+  data-currency="sgd"
+  data-name="Ng Yao Min Shop"
+  data-description="Stripe payment for Cart Items"]
+
+  script[src="https://checkout.stripe.com/v2/checkout.js"]
+
+  script
+    |  $(document).ready(function() { $(':submit').on('click', function(event) { event.preventDefault(); var $button = $(this), $form = $button.parents('form'); var opts = $.extend({}, $button.data(), { token: function(result) { $form.append($('<input>').attr({ type: 'hidden', name: 'stripeTokenType', value: result.type })); $form.append($('<input>').attr({ type: 'hidden', name: 'stripeEmail', value: result.email })); $form.append($('<input>').attr({ type: 'hidden', name: 'stripeToken', value: result.id })).submit(); } }); StripeCheckout.open(opts); }); });

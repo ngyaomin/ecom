@@ -4,15 +4,12 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
   end
 
-
-
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
 
-  resources :products do
+  resources :products, only: [:index, :show] do
     resources :line_items
-    resources :orders
+    resources :orders, only: [:create]
   end
 
   root 'products#index'

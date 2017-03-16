@@ -1,10 +1,30 @@
 p#notice = notice
 
-p
-  bold User:
-  = @cart.user
+table.table
 
-= link_to 'edit', edit_cart_path(@cart)
-' |
+  thead
+    tr
+      th Name
+      th Quantity
+      th Price
+      th Subtotal
+    tbody
+      - @cart.line_items.each do |line_item|
+        tr
+          td = line_item.product.name
+          td = line_item.quantity
+          td = line_item.product.price
+          td = line_item.subtotal
 
-= link_to 'back', carts_path
+      tr
+        td
+        td
+        td Total Price
+        td
+          strong = @cart.total_price
+
+
+          = link_to 'Edit', edit_cart_path(@cart)
+= link_to 'Back', carts_path
+
+= link_to 'Check Out', new_cart_payment_path(@cart)

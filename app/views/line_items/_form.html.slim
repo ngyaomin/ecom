@@ -1,0 +1,3 @@
+= bootstrap_form_for [@product, LineItem.new] do |f|
+  = f.number_field :quantity, min: 1, class: 'col-3'
+  = f.submit 'Add to cart', class: 'btn btn-danger btn-block'

@@ -1,0 +1,5 @@
+= bootstrap_form_for [@cart, @payment] do |f|
+  = f.text_area :address
+  = f.text_field :contact
+
+  = render 'stripe_script'

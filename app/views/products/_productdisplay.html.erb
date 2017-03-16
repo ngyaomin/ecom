@@ -23,16 +23,9 @@
 
 
     <p class="text-justify"><strong>We have sold: </strong> <%= product.purchase_quantity %></p>
-    
+
     <%= link_to 'Buy me la', product %>
-    <% if can? :update, @product %>
-      <%= link_to 'Edit', edit_product_path(product) %>
-    <% end %>
-    <% if can? :destroy, @product %>
-      <%= link_to 'Destroy', product_path(product),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-    <% end %>
+
   </div>
 
 </div>
