@@ -29,3 +29,6 @@ coverage/index\.html
 coverage/\.resultset\.json
 
 coverage/
+
+# Ignore application configuration
+/config/application.yml

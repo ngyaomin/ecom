@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe "carts/edit", type: :view do
-  before(:each) do
-    @cart = assign(:cart, Cart.create!(
-      :user_id => 1,
-      :paid => "",
-      : => "",
-      := => "MyString"
-    ))
-  end
+  # before(:each) do
+  #   @cart = assign(:cart, Cart.create!(
+  #     :user_id => 1,
+  #     :paid => "",
+  #     : => "",
+  #     := => "MyString"
+  #   ))
+  # end
 
   it "renders the edit cart form" do
     render

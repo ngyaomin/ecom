@@ -1,6 +1,6 @@
 <h2>Thanks, you paid <strong>
   <% if user_signed_in? %>
-    <% @product.price = @product.price*0.85 %>
+    <% @product.price = @product.price*ENV["discount_rate"].to_f %>
       <%=number_to_currency @product.price %>
     <% else %>
       <%=number_to_currency @product.price %>
