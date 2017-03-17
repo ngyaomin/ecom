@@ -26,10 +26,11 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @cart = Cart.find(session[:cart_id])
-    @payment = Payment.new(payment_params)
+    @payment = @cart.build_payment(payment_params)
     @payment.transaction(params[:stripeToken])
     flash[:success] = "All your money belongs to me"
-    redirect_to product_path
+    @cart.update_inventory
+    redirect_to products_path
   end
 
 

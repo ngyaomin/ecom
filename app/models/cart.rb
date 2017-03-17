@@ -12,27 +12,16 @@ class Cart < ApplicationRecord
     total_price
   end
 
-  # def transcation(stripeToken)
-  #   begin
-  #     Stripe::Charge.create(
-  #     amount: self.total_price*100,
-  #     currency: 'sgd',
-  #     source: stripeToken
-  #     )
-  #
-  #     self.update_inventory
-  #   rescue
-  #     puts "transcation did not went through"
-  #   end
-  # end
-  #
-  # def update_inventory
-  #   self.line_items.each do |item|
-  #     item.product.purchase_quantity -= item.quantity
-  #     item.product.save
-  #   end
-  # end
-  #
+
+
+  def update_inventory
+    self.line_items.each do |item|
+      item.product.inventory_available -= item.quantity
+      item.product.purchase_quantity += item.quantity
+      item.product.save
+    end
+  end
+
   # def increase_quantity(params)
   #   @line_item.quantity += params[:line_item][:quantity].to_i
   # end
@@ -47,14 +36,14 @@ class Cart < ApplicationRecord
   #   @line_item = self.line_items.find_by(product: product)
   # end
   #
-  # def self.find_or_create(cart_id, current_user)
-  #   if cart_id == nil
-  #     cart = Cart.create(user: current_user)
-  #     cart_id = cart.id
-  #   else
-  #     cart = Cart.find(cart_id)
-  #   end
-  #   return cart
-  # end
+  def self.find_or_create(cart_id, current_user)
+    if cart_id == nil
+      cart = Cart.create(user: current_user)
+      cart_id = cart.id
+    else
+      cart = Cart.find(cart_id)
+    end
+    return cart
+  end
 
 end
