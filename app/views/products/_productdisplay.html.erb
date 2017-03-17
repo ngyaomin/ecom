@@ -6,11 +6,7 @@
     <div class="producttitle"><strong>Product Name: </strong> <br><%= product.name %></div>
 
     <p class="text-justify"><strong>Product price: </strong>
-    <% if user_signed_in? %>
-      <%=number_to_currency product.price*0.85 %>
-      <% else %>
-      <%=number_to_currency product.price %>
-      <% end %>
+      <%= check_discounted_price(product) %>
     </p>
 
     <p class="text-justify"><strong>Product description: </strong> <br> <%= product.description %></p>
@@ -20,7 +16,6 @@
       <%= product.inventory_available %>
 
     </p>
-
 
     <p class="text-justify"><strong>We have sold: </strong> <%= product.purchase_quantity %></p>
 
