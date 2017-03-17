@@ -3,6 +3,7 @@
 
 
 <h1>Products</h1>
+<h6> if stock left is negative your order would be queue in back order, we make your products to order </h6>
 
 <% @products.each do |product| %>
   <%= render :partial => "productdisplay" , locals: {product: product}%>

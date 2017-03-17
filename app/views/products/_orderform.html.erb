@@ -37,22 +37,7 @@
   <%= @product.purchase_quantity %>
 </p>
 
-<p>
+<!-- <p>
   <strong>total_price:</strong>
   <%= @product.price.to_i*@product.purchase_quantity.to_i %>
-</p>
-
-<%= form_for [@product, Order.new], method: :post do %>
-<script
-		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		data-key="pk_test_GG8RyPUQj7hZmPKAFJwAgIDi"
-		data-amount=<%= @product.price*100 %>
-		data-name="Yao Min Store"
-		data-description="buy <%= @product.name %>"
-		data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-		data-locale="auto"
-    >
-
-</script>
-
-<%end%>
+</p> -->

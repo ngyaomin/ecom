@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
-    @cart = Cart.find(session[:cart_id])
+    @cart = Cart.find_by(user: current_user)
     @payment = Payment.new
   end
 
@@ -25,11 +25,14 @@ class PaymentsController < ApplicationController
   # POST /payments
   # POST /payments.json
   def create
-    @cart = Cart.find(session[:cart_id])
-    @payment = @cart.build_payment(payment_params)
-    @payment.transaction(params[:stripeToken])
-    flash[:success] = "All your money belongs to me"
+    @cart = Cart.find_by(user: current_user)
+    @cart.transaction(params[:stripeToken])
+    @cart.checkout_items(params)
+
     @cart.update_inventory
+
+    flash[:success] = "All your money belongs to me"
+
     redirect_to products_path
   end
 
