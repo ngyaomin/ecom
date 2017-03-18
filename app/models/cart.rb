@@ -11,18 +11,18 @@ class Cart < ApplicationRecord
 
   end
 
-  def total_price
+  def total_price(user_signed_in)
     total_price = 0
     self.line_items.each do |qty|
-      total_price += qty.subtotal
+      total_price += qty.subtotal(user_signed_in)
     end
     total_price
   end
 
-  def transaction(stripeToken)
+  def transaction(stripeToken, user_signed_in)
     begin
       e = Stripe::Charge.create(
-        amount: (self.total_price*100).to_i,
+        amount: (self.total_price(user_signed_in)*100).to_i,
         currency: "sgd",
         source: stripeToken
       )

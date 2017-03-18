@@ -26,7 +26,7 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @cart = Cart.find_by(user: current_user)
-    @cart.transaction(params[:stripeToken])
+    @cart.transaction(params[:stripeToken], user_signed_in?)
     @cart.checkout_items(params)
 
     @cart.update_inventory

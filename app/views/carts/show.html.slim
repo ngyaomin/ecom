@@ -13,18 +13,18 @@ table.table
         tr
           td = line_item.product.name
           td = line_item.quantity
-          td = line_item.product.price
-          td = line_item.subtotal
+          td = check_price(line_item)
+          td = line_item.subtotal(user_signed_in?)
 
       tr
         td
         td
         td Total Price
         td
-          strong = @cart.total_price
+          strong = @cart.total_price(user_signed_in?)
 
 
-          = link_to 'Edit', edit_cart_path(@cart)
+          
 = link_to 'Back', carts_path
 
 = link_to 'Check Out', new_cart_payment_path(@cart)
