@@ -11,4 +11,11 @@ module ProductsHelper
 
   end
 
+  def backorder(product)
+
+    if product.inventory_available < 0
+      return "Your order would be place in backorder."
+    end
+  end
+
 end
