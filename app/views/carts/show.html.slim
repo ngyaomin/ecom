@@ -7,7 +7,7 @@ table.table
       th Name
       th Quantity
       th Price
-      th Subtotal
+      th = check_status(@line_item)
     tbody
       - @cart.line_items.each do |line_item|
         tr
