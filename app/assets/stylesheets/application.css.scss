@@ -16,11 +16,13 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+ @import url(https://fonts.googleapis.com/css?family=Oswald:300,400);
 
  .productbox {
      background-color:#ffffff;
      padding:7px;
- 	margin:5px 0;
+ 	   margin:5px 0;
      border: 1px solid #cfcfcf;
      -moz-box-shadow: 2px 2px 4px 0px #cfcfcf;
      -webkit-box-shadow: 2px 2px 4px 0px #cfcfcf;
@@ -36,5 +38,10 @@
  }
 
  .producttext {
+
+ }
+
+ .right-align{
+   text-align: right;
 
  }

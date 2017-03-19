@@ -15,22 +15,18 @@
     <% end %>
 
     <% if user_signed_in? %>
-      <li>
+
       <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      </li>
+
     <% else %>
-      <li>
       <%= link_to('Login', new_user_session_path)  %>
 
-      <br> <%= flash = "Registered User get 15% discount" %><br>
-
-      <%= link_to('Register', new_user_registration_path) %>
-
-      </li>
+      <br> <%= flash = "Registered User get 15% discount:" %> <%= link_to('Click here to Register', new_user_registration_path) %>
     <% end %>
 
-    <%= link_to 'View Your cart' ,carts_path(@path) %>
-
+    <div class="right-align">
+      <%= link_to 'View Your cart' ,carts_path(@cart), class: 'btn btn-success' %>
+    </div>
 
     <%= yield %>
 

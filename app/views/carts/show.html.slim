@@ -23,8 +23,10 @@ table.table
         td
           strong = @cart.total_price(user_signed_in?)
 
-
+= link_to 'Edit ', edit_cart_url(@cart)
+= link_to 'Destroy ', @cart, data: { confirm: 'you sure?' }, method: :delete
           
 = link_to 'Back', carts_path
-
-= link_to 'Check Out', new_cart_payment_path(@cart)
+br
+	
+= link_to 'Check Out', new_cart_payment_path(@cart), class: 'btn btn-success'
