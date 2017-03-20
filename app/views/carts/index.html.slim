@@ -11,12 +11,9 @@ table
 tbody
   - @carts.each do |cart|
     tr
-      td = cart.user
+      td = 
       td = link_to 'show', cart,  class: 'btn btn-info btn-block' 
       br
       td = link_to 'Click to return to Main Products page', products_path
-    
-    
-
 
   br
