@@ -11,6 +11,30 @@ class Cart < ApplicationRecord
 
   end
 
+    def create_checker(cart)
+      respond_to do |format|
+        if @cart.save
+          format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+          format.json { render :show, status: :created, location: @cart }
+        else
+          format.html { render :new }
+          format.json { render json: @cart.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    def update_checker(cart)
+      respond_to do |format|
+        if @cart.update(cart_params)
+          format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+          format.json { render :show, status: :ok, location: @cart }
+        else
+          format.html { render :edit }
+          format.json { render json: @cart.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
   def total_price(user_signed_in)
     total_price = 0
     self.line_items.each do |qty|
