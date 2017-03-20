@@ -19,7 +19,6 @@ class OrdersController < ApplicationController
     @order = Order.new(product_id: params[:product_id])
     @product = Product.find(params[:product_id])
     stripe_params(order)
-
     @order.save!
     redirect_to product_path(@product)
 

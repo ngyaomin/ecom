@@ -46,20 +46,7 @@ class Cart < ApplicationRecord
     self.destroy
   end
 
-  # def increase_quantity(params)
-  #   @line_item.quantity += params[:line_item][:quantity].to_i
-  # end
-  #
-  # def add_item(product, params)
-  #   @line_item = LineItem.new(product: product, quantity: params[:line_item][:quantity])
-  #   @line_item.cart = self
-  # end
-  #
-  #
-  # def item_already_exists?(product)
-  #   @line_item = self.line_items.find_by(product: product)
-  # end
-  #
+
   def self.find_or_create(current_user)
     if Cart.find_by(user: current_user)
       cart = Cart.find_by(user: current_user)
